@@ -12,7 +12,7 @@
   if (!document.querySelector('link[data-portfolio-enhancements]')) {
     const enhancements = document.createElement('link');
     enhancements.rel = 'stylesheet';
-    enhancements.href = 'award.css?v=3';
+    enhancements.href = 'award.css?v=4';
     enhancements.dataset.portfolioEnhancements = 'true';
     document.head.appendChild(enhancements);
   }
@@ -172,12 +172,22 @@
           </div>
         </div>
 
-        <a class="award-certificate" href="https://github.com/user-attachments/assets/d5e3b550-bbe9-4639-b5ea-5c1748143e43" target="_blank" rel="noreferrer" aria-label="Open DIGILOG second-place certificate">
-          <div class="certificate-frame certificate-real">
-            <img src="https://github.com/user-attachments/assets/d5e3b550-bbe9-4639-b5ea-5c1748143e43" alt="DIGILOG certificate confirming Rostom Ben Abdallah won second place in the Process Optimization Challenge" loading="lazy" />
-          </div>
-          <span class="certificate-open">Official certificate · open full size ↗</span>
-        </a>
+        <div class="award-media">
+          <a class="award-certificate" href="https://github.com/user-attachments/assets/d5e3b550-bbe9-4639-b5ea-5c1748143e43" target="_blank" rel="noreferrer" aria-label="Open DIGILOG second-place certificate">
+            <div class="certificate-frame certificate-real">
+              <img src="https://github.com/user-attachments/assets/d5e3b550-bbe9-4639-b5ea-5c1748143e43" alt="DIGILOG certificate confirming Rostom Ben Abdallah won second place in the Process Optimization Challenge" loading="lazy" />
+            </div>
+            <span class="certificate-open">Official certificate · open full size ↗</span>
+          </a>
+
+          <figure class="award-ceremony-photo">
+            <img src="assets/digilog-award-ceremony.jpg.jpg" alt="DIGILOG Process Optimization Challenge award ceremony" loading="lazy" />
+            <figcaption>
+              <strong>Award ceremony</strong>
+              <span>DIGILOG Process Optimization Challenge · second-place recognition for SIVAR / SafeVision · May 2025</span>
+            </figcaption>
+          </figure>
+        </div>
       </article>
     `;
     educationSection.insertAdjacentElement('afterend', awardSection);
