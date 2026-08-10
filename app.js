@@ -9,6 +9,24 @@
 
   year.textContent = new Date().getFullYear();
 
+  // Keep the formal CV one click away for faculty reviewers without crowding the base markup.
+  const contactNav = navLinks.querySelector('a[href="#contact"]');
+  if (contactNav && !navLinks.querySelector('a[href="cv.html"]')) {
+    const cvNav = document.createElement('a');
+    cvNav.href = 'cv.html';
+    cvNav.textContent = 'CV';
+    navLinks.insertBefore(cvNav, contactNav);
+  }
+
+  const heroActions = document.querySelector('.hero-actions');
+  if (heroActions && !heroActions.querySelector('a[href="cv.html"]')) {
+    const cvButton = document.createElement('a');
+    cvButton.className = 'btn btn-ghost';
+    cvButton.href = 'cv.html';
+    cvButton.innerHTML = 'View CV <span aria-hidden="true">↗</span>';
+    heroActions.appendChild(cvButton);
+  }
+
   const savedTheme = localStorage.getItem('portfolio-theme');
   if (savedTheme === 'light' || savedTheme === 'dark') {
     root.dataset.theme = savedTheme;
