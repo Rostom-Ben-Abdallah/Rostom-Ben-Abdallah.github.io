@@ -1,0 +1,107 @@
+.award-project-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 206, 96, .28);
+  border-radius: 12px;
+  background: linear-gradient(120deg, rgba(255, 202, 77, .10), rgba(154, 132, 255, .05));
+  color: var(--text);
+  font-size: .72rem;
+}
+.award-project-badge strong { color: #ffd873; }
+.award-project-badge small { color: var(--muted); }
+
+.award-section { padding-top: 0; padding-bottom: 128px; }
+.award-heading { margin-bottom: 36px; }
+.award-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: .82fr 1.18fr;
+  min-height: 520px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 9% 20%, rgba(255, 204, 89, .10), transparent 27%),
+    radial-gradient(circle at 90% 82%, rgba(84, 217, 255, .07), transparent 30%),
+    color-mix(in srgb, var(--panel) 88%, transparent);
+  box-shadow: var(--shadow);
+}
+.award-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: linear-gradient(to right, #000, transparent 70%);
+}
+.award-copy { position: relative; z-index: 2; padding: clamp(30px, 5vw, 58px); }
+.award-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #ffd873;
+  font: 500 .66rem "DM Mono", monospace;
+  letter-spacing: .11em;
+}
+.award-rank { display: flex; align-items: flex-start; margin: 22px 0 0; line-height: 1; }
+.award-rank > span { font-size: clamp(5rem, 9vw, 8rem); font-weight: 800; letter-spacing: -.08em; background: linear-gradient(135deg, #fff2b8, #ffc952 58%, #dba322); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.award-rank sup { color: #ffd873; font-size: 1.1rem; font-weight: 800; margin: 18px 0 0 8px; }
+.award-rank small { align-self: flex-end; color: var(--muted-2); font: 500 .65rem "DM Mono", monospace; letter-spacing: .14em; margin: 0 0 16px -13px; }
+.award-copy h3 { margin: 4px 0 14px; font-size: clamp(2rem, 4vw, 3.8rem); line-height: 1; letter-spacing: -.055em; }
+.award-lede { color: var(--muted); font-size: .98rem; max-width: 600px; }
+.award-lede strong, .award-detail strong { color: var(--text); }
+.award-detail { color: var(--muted-2); font-size: .82rem; max-width: 610px; }
+.award-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 28px; }
+.award-proof { color: var(--mint); font: 500 .65rem "DM Mono", monospace; letter-spacing: .06em; }
+.award-proof::before { content: "●"; margin-right: 7px; font-size: .55rem; }
+
+.award-certificate {
+  position: relative;
+  z-index: 2;
+  padding: 34px;
+  display: grid;
+  place-items: center;
+  border-left: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(255,255,255,.02), rgba(84,217,255,.025));
+}
+.certificate-frame {
+  width: 100%;
+  aspect-ratio: 1.42 / 1;
+  border: 1px solid rgba(255, 216, 115, .30);
+  border-radius: 20px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 28px;
+  background: linear-gradient(145deg, rgba(255, 236, 181, .07), rgba(255,255,255,.015));
+  box-shadow: inset 0 0 0 8px rgba(255, 215, 105, .02), 0 20px 60px rgba(0,0,0,.16);
+}
+.certificate-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+.certificate-mark { font-size: 3rem; }
+.certificate-frame > span { color: #ffd873; font: 500 .63rem "DM Mono", monospace; letter-spacing: .15em; }
+.certificate-frame > strong { font-size: 1.15rem; }
+.certificate-frame > small { color: var(--muted-2); max-width: 360px; }
+
+@media (max-width: 900px) {
+  .award-card { grid-template-columns: 1fr; }
+  .award-certificate { border-left: 0; border-top: 1px solid var(--line); }
+}
+
+@media (max-width: 520px) {
+  .award-section { padding-bottom: 84px; }
+  .award-copy, .award-certificate { padding: 22px; }
+  .award-project-badge { align-items: flex-start; flex-wrap: wrap; }
+  .certificate-frame { padding: 14px; }
+}
