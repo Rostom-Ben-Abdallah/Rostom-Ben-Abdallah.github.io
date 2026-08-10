@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07101f" />
+  <meta name="description" content="LLM-guided TurtleBot3 project by Rostom Ben Abdallah: ROS 2 Humble, YOLO scene understanding, SLAM, Nav2, safety and PyQt teleoperation." />
+  <title>LLM-Guided TurtleBot3 | Rostom Ben Abdallah</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#07101f;--panel:#0b1728;--panel2:#0f1d31;--text:#edf6ff;--muted:#94a7bd;--line:rgba(255,255,255,.11);--cyan:#54d9ff;--violet:#9a84ff;--mint:#7df7c5;--orange:#ff8a3d;--shadow:0 30px 80px rgba(0,0,0,.28)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 80% 5%,rgba(154,132,255,.11),transparent 30%),radial-gradient(circle at 8% 35%,rgba(84,217,255,.08),transparent 26%),var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.65} a{color:inherit}.shell{width:min(1180px,calc(100% - 40px));margin:auto}.top{padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:20px}.back,.repo{font:500 .76rem 'DM Mono',monospace;text-decoration:none;color:var(--muted);border:1px solid var(--line);padding:10px 14px;border-radius:999px}.back:hover,.repo:hover{color:var(--text);border-color:rgba(84,217,255,.45)}
+    .hero{padding:72px 0 60px;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}.eyebrow{font:500 .7rem 'DM Mono',monospace;color:var(--cyan);letter-spacing:.1em}.hero h1{font-size:clamp(3.2rem,7vw,6.7rem);line-height:.92;letter-spacing:-.07em;margin:18px 0 24px}.gradient{background:linear-gradient(110deg,var(--cyan),var(--violet) 52%,var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent}.lede{font-size:1.08rem;color:var(--muted);max-width:730px}.lede strong{color:var(--text)}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.meta span{font:500 .68rem 'DM Mono',monospace;border:1px solid var(--line);padding:8px 10px;border-radius:9px;color:#b9c7d6;background:rgba(255,255,255,.025)}
+    .system-card{position:relative;padding:28px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.015));box-shadow:var(--shadow);overflow:hidden}.system-card:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:30px 30px;mask-image:linear-gradient(to bottom,#000,transparent)}.system-title{position:relative;font:500 .64rem 'DM Mono',monospace;color:var(--muted);letter-spacing:.12em}.node-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.node{min-height:112px;padding:17px;border:1px solid var(--line);border-radius:17px;background:rgba(7,16,31,.72)}.node small{display:block;color:var(--muted);font:500 .62rem 'DM Mono',monospace;margin-bottom:8px}.node strong{display:block;font-size:1rem}.node p{margin:5px 0 0;color:#93a7bc;font-size:.75rem}.node.vision{border-color:rgba(84,217,255,.3)}.node.language{border-color:rgba(154,132,255,.3)}.node.nav{border-color:rgba(125,247,197,.28)}.node.ui{border-color:rgba(255,138,61,.3)}
+    .section{padding:84px 0}.section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:end;margin-bottom:34px}.index{font:500 .67rem 'DM Mono',monospace;color:var(--cyan);letter-spacing:.1em}.section h2{font-size:clamp(2.2rem,5vw,4.6rem);line-height:1;letter-spacing:-.055em;margin:10px 0 0}.section-head p{color:var(--muted);margin:0;max-width:630px}
+    .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.pillar{border:1px solid var(--line);border-radius:20px;padding:24px;background:rgba(255,255,255,.025)}.pillar b{font:500 .68rem 'DM Mono',monospace;color:var(--cyan)}.pillar h3{font-size:1.08rem;margin:14px 0 9px}.pillar p{font-size:.82rem;color:var(--muted);margin:0}
+    .architecture{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:stretch}.arch{padding:22px;border-radius:18px;border:1px solid var(--line);background:var(--panel)}.arch span{font:500 .62rem 'DM Mono',monospace;color:var(--muted)}.arch strong{display:block;margin:8px 0}.arch small{color:#8fa5bb}.arrow{align-self:center;color:var(--cyan);font-size:1.5rem}.bus{grid-column:1/-1;padding:18px 22px;border:1px dashed rgba(84,217,255,.32);border-radius:15px;color:var(--muted);font:500 .7rem 'DM Mono',monospace;text-align:center;background:rgba(84,217,255,.035)}
+    .results{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.result{padding:24px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,var(--panel2),rgba(15,29,49,.4))}.result span{font:500 .64rem 'DM Mono',monospace;color:var(--mint)}.result h3{margin:12px 0 7px}.result p{font-size:.82rem;color:var(--muted);margin:0}
+    .scope{display:grid;grid-template-columns:1fr 1fr;gap:22px;border:1px solid var(--line);border-radius:24px;padding:30px;background:rgba(255,255,255,.02)}.scope h3{margin-top:0}.scope p,.scope li{color:var(--muted);font-size:.88rem}.scope ul{padding-left:18px}.team{margin-top:22px;padding-top:22px;border-top:1px solid var(--line);display:flex;gap:22px;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}.team strong{color:var(--text)}
+    .cta{padding:80px 0 110px;text-align:center}.cta h2{font-size:clamp(2.4rem,6vw,5rem);letter-spacing:-.06em;line-height:1;margin:0 0 25px}.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.btn{display:inline-flex;text-decoration:none;padding:13px 17px;border-radius:12px;border:1px solid var(--line);font-weight:700}.btn.primary{background:linear-gradient(110deg,var(--cyan),#7d8cff);color:#06101d;border:0}.btn.secondary{background:rgba(255,255,255,.03)}
+    footer{border-top:1px solid var(--line);padding:24px 0 38px;color:var(--muted);font-size:.76rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:900px){.hero,.section-head,.scope{grid-template-columns:1fr}.pillars,.results{grid-template-columns:1fr 1fr}.architecture{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}.bus{grid-column:auto}.hero{padding-top:42px}}
+    @media(max-width:580px){.shell{width:min(100% - 24px,1180px)}.pillars,.results,.node-grid{grid-template-columns:1fr}.hero h1{font-size:3rem}.section{padding:60px 0}.top{align-items:flex-start}.repo{display:none}}
+  </style>
+</head>
+<body>
+  <div class="shell top">
+    <a class="back" href="../index.html#projects">← BACK TO PORTFOLIO</a>
+    <a class="repo" href="https://github.com/Rostom-Ben-Abdallah/robot-vision-llm-teleop" target="_blank" rel="noreferrer">GITHUB REPOSITORY ↗</a>
+  </div>
+
+  <main>
+    <section class="shell hero">
+      <div>
+        <div class="eyebrow">ROBOTICS · VISION-LANGUAGE SYSTEMS · ROS 2</div>
+        <h1>LLM-Guided TurtleBot3 with <span class="gradient">vision & autonomy.</span></h1>
+        <p class="lede">A ROS 2 Humble intelligent-systems project connecting <strong>natural-language teleoperation, YOLO scene understanding, SLAM, Nav2 waypoint navigation, LiDAR safety logic and a PyQt operator interface</strong> in a TurtleBot3 Waffle Pi simulation.</p>
+        <div class="meta"><span>ROS 2 HUMBLE</span><span>TURTLEBOT3 WAFFLE PI</span><span>YOLOv8n</span><span>OLLAMA / LLAMA 3.1</span><span>SLAM TOOLBOX</span><span>NAV2</span><span>PYQT</span><span>GAZEBO / RVIZ</span></div>
+        <div class="team"><span><strong>Team:</strong> Rostom Ben Abdallah · Mohamed Benhasan</span><span><strong>Supervisor:</strong> Mohamed Slim Masmoudi</span><span><strong>Academic year:</strong> 2025/2026</span></div>
+      </div>
+
+      <div class="system-card" aria-label="High-level project modules">
+        <div class="system-title">INTELLIGENT ROBOT STACK</div>
+        <div class="node-grid">
+          <div class="node language"><small>LANGUAGE</small><strong>Ollama + Llama 3.1</strong><p>Human command → constrained motion or navigation intent.</p></div>
+          <div class="node vision"><small>PERCEPTION</small><strong>YOLO Scene Node</strong><p>Camera frames → detected objects → structured / explained scene.</p></div>
+          <div class="node nav"><small>AUTONOMY</small><strong>SLAM + Nav2</strong><p>LiDAR mapping, localization and waypoint navigation.</p></div>
+          <div class="node ui"><small>OPERATOR LAYER</small><strong>PyQt Dashboard</strong><p>Commands, camera feed, map and robot state in one interface.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-head"><div><span class="index">01 / PROJECT OBJECTIVES</span><h2>Language, perception and navigation in one robot.</h2></div><p>The project was designed around four connected capabilities: intuitive natural-language control, structured visual scene understanding, autonomous mapping/navigation and a unified operator interface.</p></div>
+      <div class="pillars">
+        <article class="pillar"><b>01</b><h3>Natural-language teleoperation</h3><p>Ollama/Llama 3.1 interprets commands and produces bounded motion values such as linear speed, angular speed and duration for ROS 2 control.</p></article>
+        <article class="pillar"><b>02</b><h3>YOLO + LLM scene understanding</h3><p>A YOLOv8n scene node processes the RGB stream and exposes <code>/describe_scene</code> for structured JSON plus <code>/explain_scene</code> for natural-language interpretation.</p></article>
+        <article class="pillar"><b>03</b><h3>SLAM & waypoint navigation</h3><p><code>slam_toolbox</code> builds the environment map from LiDAR and transforms, while Nav2 executes <code>navigate_to_pose</code> goals from predefined waypoints.</p></article>
+        <article class="pillar"><b>04</b><h3>Integrated PyQt GUI</h3><p>The operator dashboard combines LLM command entry, direct robot controls, map/position visualization and the live camera feed.</p></article>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-head"><div><span class="index">02 / ARCHITECTURE</span><h2>A ROS 2 graph built around explicit interfaces.</h2></div><p>Rather than treating the LLM as the robot controller, the system separates language, perception, navigation and safety into ROS 2 nodes communicating through topics, services and actions.</p></div>
+      <div class="architecture">
+        <div class="arch"><span>LANGUAGE INPUT</span><strong>llm_teleop / llm_nav</strong><small>Natural language → motion JSON or waypoint intent</small></div>
+        <div class="arrow">→</div>
+        <div class="arch"><span>ROBOT CONTROL</span><strong>/cmd_vel + Nav2</strong><small>Velocity commands or navigate_to_pose action</small></div>
+        <div class="arrow">←</div>
+        <div class="arch"><span>PERCEPTION</span><strong>YOLO + camera</strong><small>/camera/image_raw → /describe_scene → /explain_scene</small></div>
+        <div class="bus">/scan · /map · /tf · /camera/image_raw · /cmd_vel · /describe_scene · /explain_scene · navigate_to_pose</div>
+        <div class="arch"><span>MAPPING</span><strong>slam_toolbox</strong><small>2D LiDAR + transforms → OccupancyGrid map</small></div>
+        <div class="arrow">→</div>
+        <div class="arch"><span>SAFETY</span><strong>safety_node</strong><small>Monitors /scan and can override motion when an obstacle is too close</small></div>
+        <div class="arrow">→</div>
+        <div class="arch"><span>OPERATOR</span><strong>PyQt GUI</strong><small>Map, camera, position and language/manual controls</small></div>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-head"><div><span class="index">03 / RESULTS</span><h2>From isolated components to an integrated demo.</h2></div><p>The final presentation reports working natural-language control, ROS 2 Navigation2 integration, a low-latency GUI camera stream and successful integration of AI, robotics and the operator interface.</p></div>
+      <div class="results">
+        <article class="result"><span>CONTROL</span><h3>Intuitive teleoperation</h3><p>Natural-language commands were translated into executable robot movement behavior.</p></article>
+        <article class="result"><span>NAVIGATION</span><h3>Functional Nav2 stack</h3><p>Waypoint goals could be sent through the Navigation2 <code>navigate_to_pose</code> action.</p></article>
+        <article class="result"><span>INTERFACE</span><h3>Real-time GUI video</h3><p>The PyQt dashboard provided live visual context alongside robot controls and map information.</p></article>
+        <article class="result"><span>INTEGRATION</span><h3>AI + robotics synergy</h3><p>The project demonstrated how local language inference, perception and ROS 2 autonomy can share a single workflow.</p></article>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="scope">
+        <div>
+          <span class="index">04 / PUBLIC REPOSITORY</span>
+          <h3>What is public today</h3>
+          <p>The GitHub repository exposes the shareable ROS 2 language-teleoperation and YOLO scene-understanding components. It includes local LLM integration and services for structured and natural-language scene descriptions.</p>
+          <a href="https://github.com/Rostom-Ben-Abdallah/robot-vision-llm-teleop" target="_blank" rel="noreferrer">Open the code repository ↗</a>
+        </div>
+        <div>
+          <span class="index">05 / NEXT DIRECTIONS</span>
+          <h3>Where the system can go next</h3>
+          <ul><li>More advanced YOLO-based video analysis and tracking</li><li>Voice-command input</li><li>Closed-loop perception-aware navigation</li><li>Semantic scene memory and local VLM integration</li><li>Stronger safety validation for physical-robot deployment</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell cta">
+      <h2>Vision becomes more useful when it can <span class="gradient">change what a system does.</span></h2>
+      <div class="actions"><a class="btn primary" href="https://github.com/Rostom-Ben-Abdallah/robot-vision-llm-teleop" target="_blank" rel="noreferrer">Explore public code ↗</a><a class="btn secondary" href="../index.html#projects">Back to selected work</a></div>
+    </section>
+  </main>
+
+  <footer class="shell"><span>© 2026 Rostom Ben Abdallah</span><span>Computer Vision · Robotics Perception · Visual AI</span></footer>
+</body>
+</html>
