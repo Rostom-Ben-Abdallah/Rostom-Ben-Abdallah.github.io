@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Academic CV of Rostom Ben Abdallah — Computer Vision / Visual AI." />
+  <title>CV | Rostom Ben Abdallah</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="cv.css" />
+</head>
+<body>
+  <div class="cv-toolbar">
+    <a href="/">← Portfolio</a>
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <main class="cv-page">
+    <header class="cv-header">
+      <div>
+        <span class="cv-kicker">COMPUTER VISION · VISUAL AI</span>
+        <h1>Rostom Ben Abdallah</h1>
+        <p>Industrial Computer Engineering Student · Mitacs Research Intern</p>
+      </div>
+      <div class="cv-contact">
+        <a href="mailto:rostom.ben.abdallah@umoncton.ca">rostom.ben.abdallah@umoncton.ca</a>
+        <a href="tel:+14388763447">+1 (438) 876-3447</a>
+        <a href="https://www.linkedin.com/in/rostom-ben-abdallah-77bb441a1/">LinkedIn</a>
+        <a href="https://github.com/Rostom-Ben-Abdallah">GitHub</a>
+      </div>
+    </header>
+
+    <section class="cv-section profile-section">
+      <h2>Profile</h2>
+      <p>Industrial Computer Engineering student at ENET'Com, specialized in computer vision, deep learning and real-time visual AI systems. Currently completing a Mitacs research internship at Université de Moncton as an end-of-studies engineering project, focused on automated monkey behaviour analysis from video. Experienced in object detection, tracking, segmentation, re-identification and industrial vision using Python, OpenCV, PyTorch, YOLO and Roboflow. Interested in M.Sc. research in computer vision, video understanding and applied AI.</p>
+    </section>
+
+    <section class="cv-section">
+      <h2>Technical Skills</h2>
+      <div class="skill-rows">
+        <div><strong>Programming</strong><span>Python · Java · C · C++</span></div>
+        <div><strong>Computer Vision / AI</strong><span>OpenCV · PyTorch · YOLO · RF-DETR · GroundingDINO · SAM · Qwen VLM · Roboflow · MediaPipe · InsightFace · EasyOCR</span></div>
+        <div><strong>Tracking / Re-ID</strong><span>ByteTrack · BoT-SORT · OSNet · ROI logic · ID filtering · counting pipelines</span></div>
+        <div><strong>Deployment / Systems</strong><span>Raspberry Pi · ESP32 · ONNX · CUDA/cuDNN · PyQt · Web apps · Node-RED · Git · Linux · HPC/Slurm · Globus</span></div>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <div class="section-title-row"><h2>Research Experience</h2><span>2026</span></div>
+      <article class="cv-entry featured">
+        <div class="entry-head">
+          <div><h3>Mitacs Research Intern — End-of-Studies Engineering Project</h3><p>Université de Moncton · Canada</p></div>
+          <time>Apr 18 – Aug 18, 2026</time>
+        </div>
+        <h4>AI-based computer vision platform for automated ethological monitoring</h4>
+        <ul>
+          <li>Developed an AI-based computer vision platform for automated ethological monitoring of vervet monkeys, combining body detection, collar-based individual identification, tracking, segmentation, label-quality control and behaviour-analysis workflows.</li>
+          <li>Built and evaluated a large-scale video-derived dataset on the Nibi HPC cluster, using Slurm-based processing for detection, tracking, annotation preparation and model benchmarking.</li>
+          <li>Benchmarked modern vision and multimodal models including YOLO, RF-DETR, SAM3/SAM3.1, GroundingDINO, Qwen VLM, DeepLabCut SuperAnimal, macaque3Dpose and Cleanlab.</li>
+          <li>Designed a web application to process videos, visualize detections and tracks, review annotations and export structured results for behavioural analysis.</li>
+          <li>Developing an action-recognition model to classify monkey behaviours from video, pose, identity and temporal tracking features.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Internships & Project Experience</h2>
+
+      <article class="cv-entry">
+        <div class="entry-head"><div><h3>Summer Internship · Solution Accommodation (SAC Marquage)</h3><p>Sfax, Tunisia</p></div><time>Jul – Aug 2025</time></div>
+        <h4>Bi-camera face recognition for IN/OUT counting and access analysis</h4>
+        <ul><li>Deployed two vertically aligned cameras for doorway throughput analysis using YOLOv11x detection and OSNet re-identification.</li><li>Applied GFPGAN enhancement and InsightFace embeddings with cosine similarity for real-time long-range face recognition.</li><li>Ran models locally on workstation/edge hardware to ensure low latency and data privacy.</li></ul>
+        <p class="tech">Python · OpenCV · YOLOv11x · InsightFace · GFPGAN · OSNet</p>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head"><div><h3>Summer Internship · Solution Accommodation (SAC Marquage)</h3><p>Sfax, Tunisia</p></div><time>Jun – Jul 2025</time></div>
+        <h4>AI-driven real-time tracking and counting for automated medication dispensing</h4>
+        <ul><li>Collected on-site videos, polygon-annotated datasets and fine-tuned YOLOv11-seg to identify tablets and vials.</li><li>Built a real-time segmentation → ByteTrack → ROI/hysteresis/ID-filter counting pipeline to prevent double counting.</li><li>Developed a PyQt operator interface with live feed, status display, reset, export, annotated clips and Excel logs.</li></ul>
+        <p class="tech">Python · OpenCV · YOLOv11-seg · ByteTrack · Roboflow · PyQt · Excel · PyTorch</p>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head"><div><h3>End-of-Year Project · Solution Accommodation (SAC Marquage)</h3><p>Sfax, Tunisia</p></div><time>Sep 2024 – Apr 2025</time></div>
+        <h4>Real-time laser-marking quality control using computer vision and AI</h4>
+        <ul><li>Designed a real-time quality-control system using an industrial camera and a complete vision pipeline from acquisition to detection, validation and decision.</li><li>Trained two specialized YOLOv11n models and implemented OpenCV validation for position, DeltaE2000 colour difference, opacity and punctual readability checks.</li><li>Integrated Modbus TCP/IP communication with API/PLC logic for line stop, acknowledgement and safe restart on defective-part detection.</li><li>Deployed on GPU with CUDA/cuDNN and optimized latency to meet production-line takt time.</li></ul>
+        <p class="tech">Python · OpenCV · EasyOCR · YOLOv11n · DeltaE2000 · ESRGAN · Modbus TCP · PLC · CUDA/cuDNN</p>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head"><div><h3>Summer Internship · Cockpit IoT</h3><p>Sfax, Tunisia</p></div><time>Jun – Jul 2024</time></div>
+        <h4>AI-assisted poultry counting on a production line</h4>
+        <ul><li>Built and annotated an image dataset in Roboflow and fine-tuned YOLOv8 for poultry detection.</li><li>Integrated BoT-SORT tracking and IN/OUT counting logic in OpenCV for real-time annotated video.</li><li>Exported to ONNX, tested on Raspberry Pi 4 with Camera v2, optimized latency/FPS and logged events in MariaDB.</li></ul>
+        <p class="tech">Python · OpenCV · YOLOv8 · BoT-SORT · Roboflow · ONNX · Raspberry Pi 4 · MariaDB</p>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head"><div><h3>End-of-Study Internship · Tunisian Development Systems (TDS)</h3><p>Sfax, Tunisia</p></div><time>Feb – Jun 2023</time></div>
+        <h4>Industry 4.0 demonstrator for motor energy control</h4>
+        <ul><li>Prototyped an Industry 4.0 system combining embedded control and IoT for motor/drive supervision in TIA Portal.</li><li>Built a PLC-to-Raspberry Pi 4 gateway using OPC UA, MQTT and HTTP, with a Node-RED dashboard for real-time control and visualization.</li></ul>
+        <p class="tech">TIA Portal · PLC · Raspberry Pi 4 · OPC UA · MQTT · HTTP · Node-RED</p>
+      </article>
+    </section>
+
+    <section class="cv-section two-col">
+      <div>
+        <h2>Education</h2>
+        <article class="small-entry"><time>Sep 2023 – Present</time><h3>Engineering Degree, Industrial Computer Engineering</h3><p>National School of Electronics and Telecommunications of Sfax (ENET'Com)</p></article>
+        <article class="small-entry"><time>Sep 2020 – Jun 2023</time><h3>Bachelor's Degree in Automation and Industrial Computing</h3><p>Higher Institute of Industrial Management of Sfax (ISGIS)</p><small>Graduated with highest honors, among top academic performers</small></article>
+        <article class="small-entry"><time>Sep 2016 – Jul 2020</time><h3>Baccalaureate in Technological Sciences</h3><p>Lycée Hay Lahbib</p><small>Graduated with honors</small></article>
+      </div>
+      <div>
+        <h2>Achievements & Activities</h2>
+        <ul class="achievement-list">
+          <li>2nd place, DIGILOG — Process Optimization Challenge, organized by ENET'Com, Leipzig University and KNUST with DAAD/BMZ support.</li>
+          <li>Final-year project distinguished at the Sfax University Fair.</li>
+          <li>Upper-Intermediate (B2) English Certificate — English Cultural Center.</li>
+          <li>Arduino & Raspberry Pi Performance Certificate — Ultimate Learning Center.</li>
+          <li>Business & Development Lead — We Are Geeks Project, Tunivisions Foundation.</li>
+          <li>Sponsorship Assistant — Tunivisions ISGIS Club.</li>
+        </ul>
+        <h2 class="languages-title">Languages</h2>
+        <p class="languages">Arabic <b>Native</b> · French <b>B2</b> · English <b>B2</b></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
