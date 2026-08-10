@@ -7,18 +7,26 @@
   const year = document.getElementById('year');
   const glow = document.querySelector('.cursor-glow');
 
-  year.textContent = new Date().getFullYear();
+  if (year) year.textContent = new Date().getFullYear();
 
-  // Load the award-specific presentation without expanding the base stylesheet.
-  if (!document.querySelector('link[href="award.css"]')) {
-    const awardStyles = document.createElement('link');
-    awardStyles.rel = 'stylesheet';
-    awardStyles.href = 'award.css';
-    document.head.appendChild(awardStyles);
+  if (!document.querySelector('link[data-portfolio-enhancements]')) {
+    const enhancements = document.createElement('link');
+    enhancements.rel = 'stylesheet';
+    enhancements.href = 'award.css?v=3';
+    enhancements.dataset.portfolioEnhancements = 'true';
+    document.head.appendChild(enhancements);
   }
 
-  // Keep the formal CV one click away for faculty reviewers without crowding the base markup.
-  const contactNav = navLinks.querySelector('a[href="#contact"]');
+  const researchNav = navLinks?.querySelector('a[href="#research"]');
+  const contactNav = navLinks?.querySelector('a[href="#contact"]');
+
+  if (researchNav && !navLinks.querySelector('a[href="#about"]')) {
+    const aboutNav = document.createElement('a');
+    aboutNav.href = '#about';
+    aboutNav.textContent = 'About';
+    navLinks.insertBefore(aboutNav, researchNav);
+  }
+
   if (contactNav && !navLinks.querySelector('a[href="cv.html"]')) {
     const cvNav = document.createElement('a');
     cvNav.href = 'cv.html';
@@ -35,7 +43,63 @@
     heroActions.appendChild(cvButton);
   }
 
-  // Surface the DIGILOG recognition directly on the SafeVision/SIVAR project card.
+  const signalStrip = document.querySelector('.signal-strip');
+  const researchSection = document.getElementById('research');
+  if (signalStrip && researchSection && !document.getElementById('about')) {
+    const aboutSection = document.createElement('section');
+    aboutSection.className = 'section shell about-section reveal';
+    aboutSection.id = 'about';
+    aboutSection.setAttribute('aria-labelledby', 'aboutTitle');
+    aboutSection.innerHTML = `
+      <div class="about-grid">
+        <div class="portrait-card" aria-label="Portrait of Rostom Ben Abdallah">
+          <div class="portrait-grid" aria-hidden="true"></div>
+          <div class="portrait-halo" aria-hidden="true"></div>
+          <img src="assets/rostom-ben-abdallah.webp" alt="Rostom Ben Abdallah" loading="eager" />
+          <div class="portrait-caption">
+            <span>ROSTOM BEN ABDALLAH</span>
+            <small>Computer Vision · Visual AI</small>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <span class="section-index">00 / ABOUT</span>
+          <h2 id="aboutTitle">I build vision systems that survive <span class="muted">outside the notebook.</span></h2>
+          <p class="about-lede">
+            I am an Industrial Computer Engineering student at ENET’Com and a Mitacs research intern at Université de Moncton. My work sits at the intersection of <strong>computer vision, video understanding and intelligent systems</strong>, with hands-on experience moving from data and models to tracking, temporal reasoning, interfaces and deployment.
+          </p>
+          <p>
+            My current research focuses on automated animal behaviour analysis from multi-camera video. Across research and industry projects, I have worked on detection, segmentation, multi-object tracking, Re-ID, action recognition, industrial inspection, edge deployment and robotics perception.
+          </p>
+
+          <div class="about-proof-grid" aria-label="Profile highlights">
+            <div>
+              <strong>MITACS</strong>
+              <span>Research internship</span>
+              <small>Université de Moncton</small>
+            </div>
+            <div>
+              <strong>2nd PLACE</strong>
+              <span>DIGILOG Challenge</span>
+              <small>SIVAR / SafeVision</small>
+            </div>
+            <div>
+              <strong>M.Sc.</strong>
+              <span>Research target</span>
+              <small>Computer Vision / AI</small>
+            </div>
+          </div>
+
+          <div class="about-links">
+            <a class="text-link" href="cv.html">Academic CV <span>↗</span></a>
+            <a class="text-link" href="https://github.com/Rostom-Ben-Abdallah" target="_blank" rel="noreferrer">Public code & case studies <span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    `;
+    signalStrip.insertAdjacentElement('afterend', aboutSection);
+  }
+
   const safeVisionTitle = [...document.querySelectorAll('.project-card h3')]
     .find((heading) => heading.textContent.includes('SafeVision'));
   if (safeVisionTitle) {
@@ -44,12 +108,11 @@
     if (tags && !safeVisionCard.querySelector('.award-project-badge')) {
       const badge = document.createElement('div');
       badge.className = 'award-project-badge';
-      badge.innerHTML = '<span aria-hidden="true">🏆</span><strong>2nd Place</strong><small>DIGILOG Process Optimization Challenge · 2025</small>';
+      badge.innerHTML = '<span aria-hidden="true">★</span><strong>2nd Place</strong><small>DIGILOG Process Optimization Challenge · 2025</small>';
       tags.after(badge);
     }
   }
 
-  // Add a dedicated achievement section between Education and Contact.
   const educationSection = document.querySelector('.education-section');
   const contactSection = document.getElementById('contact');
   if (educationSection && contactSection && !document.getElementById('award')) {
@@ -61,9 +124,9 @@
       <div class="section-heading award-heading">
         <div>
           <span class="section-index">06 / RECOGNITION</span>
-          <h2 id="awardTitle">Awarded for turning an idea into a <span class="muted">working vision system.</span></h2>
+          <h2 id="awardTitle">Recognition backed by a <span class="muted">working system.</span></h2>
         </div>
-        <p>The SIVAR / SafeVision project earned second place in an international process-optimization challenge involving academic partners from Tunisia, Germany and Ghana.</p>
+        <p>SIVAR / SafeVision earned second place in the DIGILOG Process Optimization Challenge — external recognition for an applied computer-vision system that combined perception, event reasoning and operator-facing delivery.</p>
       </div>
 
       <article class="award-card">
@@ -71,21 +134,20 @@
           <div class="award-kicker"><span aria-hidden="true">★</span> DIGILOG · PROCESS OPTIMIZATION CHALLENGE</div>
           <div class="award-rank"><span>2</span><sup>nd</sup><small>PLACE</small></div>
           <h3>SIVAR / SafeVision</h3>
-          <p class="award-lede">The project was recognized with <strong>second place</strong> in the DIGILOG Process Optimization Challenge, held at ENET’Com Sfax from <strong>23–27 May 2025</strong>.</p>
-          <p class="award-detail">The certificate records the challenge as organized by <strong>ENET’Com</strong> (Tunisia), <strong>Leipzig University</strong> (Germany) and <strong>KNUST</strong> (Ghana), with DAAD/BMZ support.</p>
+          <p class="award-lede">Awarded <strong>second place</strong> at the DIGILOG Process Optimization Challenge held at ENET’Com Sfax from <strong>23–27 May 2025</strong>.</p>
+          <p class="award-detail">The official certificate names <strong>ENET’Com</strong> (Tunisia), <strong>Leipzig University</strong> (Germany) and <strong>KNUST</strong> (Ghana) as organizers, with DAAD/BMZ support.</p>
           <div class="award-actions">
             <a class="text-link" href="https://github.com/Rostom-Ben-Abdallah/safevision-multicamera-vision" target="_blank" rel="noreferrer">Explore the awarded project <span>↗</span></a>
-            <span class="award-proof">Official certificate available</span>
+            <a class="award-proof" href="https://github.com/user-attachments/assets/d5e3b550-bbe9-4639-b5ea-5c1748143e43" target="_blank" rel="noreferrer">View official certificate</a>
           </div>
         </div>
-        <div class="award-certificate" id="awardCertificate">
-          <div class="certificate-frame">
-            <div class="certificate-mark" aria-hidden="true">🏆</div>
-            <span>OFFICIAL CERTIFICATE</span>
-            <strong>DIGILOG · SECOND PLACE</strong>
-            <small>Certificate image will appear here after the GitHub media attachment is linked.</small>
+
+        <a class="award-certificate" href="https://github.com/user-attachments/assets/d5e3b550-bbe9-4639-b5ea-5c1748143e43" target="_blank" rel="noreferrer" aria-label="Open DIGILOG second-place certificate">
+          <div class="certificate-frame certificate-real">
+            <img src="https://github.com/user-attachments/assets/d5e3b550-bbe9-4639-b5ea-5c1748143e43" alt="DIGILOG certificate confirming Rostom Ben Abdallah won second place in the Process Optimization Challenge" loading="lazy" />
           </div>
-        </div>
+          <span class="certificate-open">Official certificate · open full size ↗</span>
+        </a>
       </article>
     `;
     educationSection.insertAdjacentElement('afterend', awardSection);
@@ -93,7 +155,7 @@
     if (contactNav && !navLinks.querySelector('a[href="#award"]')) {
       const awardNav = document.createElement('a');
       awardNav.href = '#award';
-      awardNav.textContent = 'Award';
+      awardNav.textContent = 'Recognition';
       navLinks.insertBefore(awardNav, contactNav);
     }
   }
@@ -103,29 +165,29 @@
     root.dataset.theme = savedTheme;
   }
 
-  themeToggle.addEventListener('click', () => {
+  themeToggle?.addEventListener('click', () => {
     const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
     root.dataset.theme = next;
     localStorage.setItem('portfolio-theme', next);
   });
 
-  menuToggle.addEventListener('click', () => {
+  menuToggle?.addEventListener('click', () => {
     const open = !navLinks.classList.contains('open');
     navLinks.classList.toggle('open', open);
     menuToggle.classList.toggle('open', open);
     menuToggle.setAttribute('aria-expanded', String(open));
   });
 
-  navLinks.querySelectorAll('a').forEach((link) => {
+  navLinks?.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
-      menuToggle.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle?.classList.remove('open');
+      menuToggle?.setAttribute('aria-expanded', 'false');
     });
   });
 
   const onScroll = () => {
-    header.classList.toggle('scrolled', window.scrollY > 14);
+    header?.classList.toggle('scrolled', window.scrollY > 14);
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });

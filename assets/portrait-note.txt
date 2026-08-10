@@ -1,1 +1,0 @@
-Portfolio portrait asset is managed as a binary file in the repository tree.
