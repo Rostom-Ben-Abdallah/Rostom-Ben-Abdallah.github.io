@@ -113,6 +113,36 @@
     }
   }
 
+  // Expand the robotics project from a minimal card into a faculty-friendly case-study entry.
+  const robotTitle = [...document.querySelectorAll('.project-card h3')]
+    .find((heading) => heading.textContent.includes('Robot Vision + LLM'));
+  if (robotTitle) {
+    const robotCard = robotTitle.closest('.project-card');
+    robotCard?.classList.add('robot-project-card');
+    robotTitle.textContent = 'LLM-Guided TurtleBot3 — Vision, SLAM & Nav2';
+
+    const tags = robotCard?.querySelector('.project-tags');
+    if (tags) tags.innerHTML = '<span>ROS 2</span><span>YOLO</span><span>LLM</span><span>SLAM / Nav2</span>';
+
+    const description = robotCard?.querySelector('p');
+    if (description) description.textContent = 'TurtleBot3 Waffle Pi system combining natural-language teleoperation, YOLO scene understanding, SLAM mapping, Nav2 waypoint navigation, LiDAR safety logic and a PyQt operator dashboard.';
+
+    const link = robotCard?.querySelector('.text-link');
+    if (link) {
+      link.href = 'projects/turtlebot3.html';
+      link.removeAttribute('target');
+      link.removeAttribute('rel');
+      link.innerHTML = 'Open full robotics case study <span>↗</span>';
+    }
+
+    if (!robotCard?.querySelector('.robot-project-proof')) {
+      const proof = document.createElement('div');
+      proof.className = 'robot-project-proof';
+      proof.innerHTML = '<span>LANGUAGE → PERCEPTION → MAPPING → NAVIGATION</span><small>Ollama/Llama 3.1 · YOLOv8n · slam_toolbox · Navigation2 · PyQt</small>';
+      link?.before(proof);
+    }
+  }
+
   const educationSection = document.querySelector('.education-section');
   const contactSection = document.getElementById('contact');
   if (educationSection && contactSection && !document.getElementById('award')) {
