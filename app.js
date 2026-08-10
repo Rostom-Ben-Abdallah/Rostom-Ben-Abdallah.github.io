@@ -30,8 +30,15 @@
   if (contactNav && !navLinks.querySelector('a[href="cv.html"]')) {
     const cvNav = document.createElement('a');
     cvNav.href = 'cv.html';
-    cvNav.textContent = 'CV';
+    cvNav.textContent = 'CV EN';
     navLinks.insertBefore(cvNav, contactNav);
+  }
+
+  if (contactNav && !navLinks.querySelector('a[href="cv-fr.html"]')) {
+    const cvFrNav = document.createElement('a');
+    cvFrNav.href = 'cv-fr.html';
+    cvFrNav.textContent = 'CV FR';
+    navLinks.insertBefore(cvFrNav, contactNav);
   }
 
   const heroActions = document.querySelector('.hero-actions');
@@ -39,8 +46,16 @@
     const cvButton = document.createElement('a');
     cvButton.className = 'btn btn-ghost';
     cvButton.href = 'cv.html';
-    cvButton.innerHTML = 'View CV <span aria-hidden="true">↗</span>';
+    cvButton.innerHTML = 'CV English <span aria-hidden="true">↗</span>';
     heroActions.appendChild(cvButton);
+  }
+
+  if (heroActions && !heroActions.querySelector('a[href="cv-fr.html"]')) {
+    const cvFrButton = document.createElement('a');
+    cvFrButton.className = 'btn btn-ghost';
+    cvFrButton.href = 'cv-fr.html';
+    cvFrButton.innerHTML = 'CV Français <span aria-hidden="true">↗</span>';
+    heroActions.appendChild(cvFrButton);
   }
 
   const signalStrip = document.querySelector('.signal-strip');
@@ -91,7 +106,8 @@
           </div>
 
           <div class="about-links">
-            <a class="text-link" href="cv.html">Academic CV <span>↗</span></a>
+            <a class="text-link" href="cv.html">Academic CV (EN) <span>↗</span></a>
+            <a class="text-link" href="cv-fr.html">CV académique (FR) <span>↗</span></a>
             <a class="text-link" href="https://github.com/Rostom-Ben-Abdallah" target="_blank" rel="noreferrer">Public code & case studies <span>↗</span></a>
           </div>
         </div>
@@ -113,7 +129,6 @@
     }
   }
 
-  // Expand the robotics project from a minimal card into a faculty-friendly case-study entry.
   const robotTitle = [...document.querySelectorAll('.project-card h3')]
     .find((heading) => heading.textContent.includes('Robot Vision + LLM'));
   if (robotTitle) {
