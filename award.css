@@ -23,6 +23,14 @@ html[data-theme="light"] .portrait-caption { background: rgba(255,255,255,.82); 
 .about-proof-grid > div:nth-child(2) strong { color: #ffd873; }
 .about-links { display: flex; flex-wrap: wrap; gap: 24px; }
 
+/* Robotics project enhancement */
+.robot-project-card { position: relative; overflow: hidden; border-color: rgba(84,217,255,.22); background: radial-gradient(circle at 88% 14%, rgba(84,217,255,.09), transparent 32%), radial-gradient(circle at 15% 86%, rgba(154,132,255,.08), transparent 31%), color-mix(in srgb, var(--panel) 90%, transparent); }
+.robot-project-card::after { content: "ROS 2"; position: absolute; right: 18px; top: 13px; color: rgba(84,217,255,.12); font: 800 clamp(2.8rem,5vw,4.7rem) "DM Mono", monospace; letter-spacing: -.08em; pointer-events: none; }
+.robot-project-card h3 { position: relative; z-index: 1; }
+.robot-project-proof { position: relative; z-index: 1; display: grid; gap: 5px; margin: 19px 0 20px; padding: 13px 14px; border: 1px solid rgba(84,217,255,.16); border-radius: 13px; background: rgba(84,217,255,.035); }
+.robot-project-proof span { color: var(--cyan); font: 600 .64rem "DM Mono", monospace; letter-spacing: .055em; }
+.robot-project-proof small { color: var(--muted-2); font-size: .69rem; line-height: 1.45; }
+
 .award-project-badge { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 8px 10px; border: 1px solid rgba(255,206,96,.28); border-radius: 12px; background: linear-gradient(120deg, rgba(255,202,77,.10), rgba(154,132,255,.05)); color: var(--text); font-size: .72rem; }
 .award-project-badge > span, .award-project-badge strong { color: #ffd873; }
 .award-project-badge small { color: var(--muted); }
@@ -54,4 +62,4 @@ html[data-theme="light"] .portrait-caption { background: rgba(255,255,255,.82); 
 @media (max-width: 1050px) { .about-grid { grid-template-columns: .82fr 1.18fr; gap: 34px; } .portrait-card { min-height: 510px; } }
 @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } .portrait-card { width: min(100%, 500px); min-height: 560px; margin-inline: auto; } .award-card { grid-template-columns: 1fr; } .award-certificate { border-left: 0; border-top: 1px solid var(--line); } }
 @media (max-width: 620px) { .about-section { padding-top: 76px; padding-bottom: 84px; } .portrait-card { min-height: 485px; } .about-proof-grid { grid-template-columns: 1fr; } .about-proof-grid > div { min-height: 0; } .about-proof-grid span { margin-top: 8px; } }
-@media (max-width: 520px) { .award-section { padding-bottom: 84px; } .award-copy, .award-certificate { padding: 22px; } .award-project-badge { align-items: flex-start; flex-wrap: wrap; } .certificate-frame { border-radius: 14px; } .portrait-card { min-height: 430px; border-radius: 24px; } .portrait-caption { left: 12px; right: 12px; bottom: 12px; } }
+@media (max-width: 520px) { .award-section { padding-bottom: 84px; } .award-copy, .award-certificate { padding: 22px; } .award-project-badge { align-items: flex-start; flex-wrap: wrap; } .certificate-frame { border-radius: 14px; } .portrait-card { min-height: 430px; border-radius: 24px; } .portrait-caption { left: 12px; right: 12px; bottom: 12px; } .robot-project-card::after { display:none; } }
