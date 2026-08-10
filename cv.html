@@ -14,7 +14,10 @@
 <body>
   <div class="cv-toolbar">
     <a href="/">← Portfolio</a>
-    <button type="button" onclick="window.print()">Print / Save PDF</button>
+    <div class="tools">
+      <a href="cv-fr.html">CV Français</a>
+      <button type="button" class="download-btn" onclick="window.print()">Download / Save PDF</button>
+    </div>
   </div>
 
   <main class="cv-page">
@@ -43,7 +46,7 @@
         <div><strong>Programming</strong><span>Python · Java · C · C++</span></div>
         <div><strong>Computer Vision / AI</strong><span>OpenCV · PyTorch · YOLO · RF-DETR · GroundingDINO · SAM · Qwen VLM · Roboflow · MediaPipe · InsightFace · EasyOCR</span></div>
         <div><strong>Tracking / Re-ID</strong><span>ByteTrack · BoT-SORT · OSNet · ROI logic · ID filtering · counting pipelines</span></div>
-        <div><strong>Deployment / Systems</strong><span>Raspberry Pi · ESP32 · ONNX · CUDA/cuDNN · PyQt · Web apps · Node-RED · Git · Linux · HPC/Slurm · Globus</span></div>
+        <div><strong>Deployment / Systems</strong><span>Raspberry Pi · ESP32 · ONNX · CUDA/cuDNN · PyQt · Web apps · Node-RED · Git · Linux · HPC/Slurm · Globus · ROS 2 · Nav2</span></div>
       </div>
     </section>
 
@@ -67,6 +70,13 @@
 
     <section class="cv-section">
       <h2>Internships & Project Experience</h2>
+
+      <article class="cv-entry">
+        <div class="entry-head"><div><h3>Intelligent Systems Project · ENET'Com</h3><p>Sfax, Tunisia</p></div><time>2025 – 2026</time></div>
+        <h4>LLM-guided TurtleBot3: visual scene understanding, SLAM and ROS 2 navigation</h4>
+        <ul><li>Integrated natural-language teleoperation with Ollama/Llama 3.1 and a YOLOv8n scene-perception node exposing structured and natural-language ROS 2 services.</li><li>Implemented slam_toolbox, Nav2 waypoint navigation and LiDAR safety logic capable of overriding motion when an obstacle is detected within a safety threshold.</li><li>Built a PyQt operator dashboard integrating LLM commands, direct controls, map/robot position and the live camera stream in Gazebo/RViz.</li></ul>
+        <p class="tech">ROS 2 Humble · TurtleBot3 · YOLOv8n · Ollama / Llama 3.1 · SLAM Toolbox · Nav2 · PyQt · Gazebo · RViz</p>
+      </article>
 
       <article class="cv-entry">
         <div class="entry-head"><div><h3>Summer Internship · Solution Accommodation (SAC Marquage)</h3><p>Sfax, Tunisia</p></div><time>Jul – Aug 2025</time></div>
