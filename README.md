@@ -16,6 +16,7 @@ The site is intentionally research-first. It highlights current Mitacs work, sel
 - accessible dark/light themes
 - public-safe presentation of confidential research
 - playable demonstrations for shareable projects
+- dedicated web CV with print / Save PDF support
 
 ## Main sections
 
@@ -25,7 +26,10 @@ The site is intentionally research-first. It highlights current Mitacs work, sel
 - Technical toolkit and graduate research interests
 - Education
 - Contact
+- Web CV — `cv.html`
 
 ## Public / confidential boundary
 
 Active research data, private datasets, trained models, credentials, infrastructure details and unpublished results are intentionally excluded. Public portfolio material focuses on transferable methods, independently shareable code and approved project demonstrations.
+
+_Last portfolio refresh: August 2026._
