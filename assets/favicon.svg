@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Rostom Ben Abdallah visual AI mark">
+  <defs>
+    <linearGradient id="g" x1="8" y1="10" x2="56" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#54d9ff"/>
+      <stop offset=".55" stop-color="#9a84ff"/>
+      <stop offset="1" stop-color="#7cf3c3"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#07101f"/>
+  <path d="M8 32c7-11 15-17 24-17s17 6 24 17c-7 11-15 17-24 17S15 43 8 32Z" fill="none" stroke="url(#g)" stroke-width="3"/>
+  <circle cx="32" cy="32" r="9" fill="none" stroke="url(#g)" stroke-width="3"/>
+  <circle cx="32" cy="32" r="3.5" fill="#7cf3c3"/>
+  <circle cx="13" cy="18" r="2" fill="#54d9ff"/>
+  <circle cx="51" cy="46" r="2" fill="#9a84ff"/>
+  <path d="M14 19l10 7M50 45l-10-7" stroke="url(#g)" stroke-width="1.5" opacity=".8"/>
+</svg>
