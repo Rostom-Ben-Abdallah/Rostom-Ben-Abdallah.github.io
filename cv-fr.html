@@ -1,131 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CV académique de Rostom Ben Abdallah - Vision par ordinateur et IA visuelle." />
-  <title>CV Français | Rostom Ben Abdallah</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="cv.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CV professionnel en une page de Rostom Ben Abdallah, ingénieur IA spécialisé en vision par ordinateur, analyse vidéo multi-caméras, détection, suivi et reconnaissance d'actions.">
+  <meta name="author" content="Rostom Ben Abdallah">
+  <title>Rostom Ben Abdallah | Ingénieur IA &amp; Vision par ordinateur · CV</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cv.css?v=20261028">
 </head>
 <body>
-  <div class="cv-toolbar">
-    <a href="/">← Portfolio</a>
+  <nav class="cv-toolbar" aria-label="CV navigation">
+    <a class="toolbar-back" href="index.html">← Retour au portfolio</a>
     <div class="tools">
-      <a href="cv.html">English CV</a>
-      <button type="button" class="download-btn" onclick="window.print()">Télécharger / Enregistrer en PDF</button>
+      <a href="cv.html" lang="en">English version</a>
+      <button class="download-btn" type="button" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
     </div>
-  </div>
-  <main class="cv-page">
+  </nav>
+  <main class="cv-page" aria-label="Ingénieur IA &amp; Vision par ordinateur CV">
     <header class="cv-header">
-      <div>
-        <span class="cv-kicker">VISION PAR ORDINATEUR · IA VISUELLE</span>
-        <h1>Rostom Ben Abdallah</h1>
-        <p>Ingénieur en informatique industrielle · Computer Vision & Deep Learning</p>
-      </div>
+      <span class="cv-kicker">INGÉNIEUR IA · COMPUTER VISION · ANALYSE VIDÉO</span>
+      <h1>Rostom Ben Abdallah</h1>
+      <p class="cv-role">Ingénieur IA &amp; Vision par ordinateur</p>
       <div class="cv-contact">
-        <a href="mailto:benabdallah069@gmail.com">benabdallah069@gmail.com</a>
+        <span>Tunisie</span>
         <a href="tel:+21623616312">+216 23 616 312</a>
-        <a href="https://www.linkedin.com/in/rostom-ben-abdallah-77bb441a1/">LinkedIn</a>
-        <a href="https://github.com/Rostom-Ben-Abdallah">GitHub</a>
+        <a href="mailto:benabdallah069@gmail.com">benabdallah069@gmail.com</a>
+        <a href="https://www.linkedin.com/in/rostom-ben-abdallah-77bb441a1/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com/Rostom-Ben-Abdallah" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://rostom-ben-abdallah.github.io/" target="_blank" rel="noreferrer">Portfolio</a>
       </div>
     </header>
-
     <section class="cv-section profile-section">
       <h2>Profil</h2>
-      <p>Ingénieur diplômé de l'ENET'Com en octobre 2026 (mention Bien), spécialisé en vision par ordinateur, deep learning et compréhension vidéo. Ancien stagiaire de recherche Mitacs Globalink à l'Université de Moncton, où j'ai conçu un système de vision multi-caméras pour l'identification de singes vervets et développé Vervet-TCM, mon architecture de reconnaissance spatiotemporelle de comportements. Admis en maîtrise recherche en informatique à l'Université de Moncton pour l'hiver 2027. Compétences en PyTorch, YOLO, RF-DETR, OpenCV, suivi multi-objets, ré-identification et entraînement sur infrastructure HPC.</p>
+      <p>Ingénieur IA spécialisé en vision par ordinateur, analyse vidéo temps réel et deep learning. Conception de systèmes complets de détection, segmentation, suivi multi-objets, ré-identification et reconnaissance d’actions, dont Vervet-TCM, mon architecture temporelle personnalisée. Expérience en inférence GPU, préparation de données vidéo et interfaces applicatives.</p>
     </section>
-
-    <section class="cv-section">
+    <section class="cv-section skills-section">
       <h2>Compétences techniques</h2>
       <div class="skill-rows">
-        <div><strong>Programmation</strong><span>Python · C++ · SQL · JavaScript</span></div>
-        <div><strong>Vision / IA</strong><span>PyTorch · OpenCV · YOLO · RF-DETR · Vervet-TCM · R3D-18 · TCN · attention · segmentation · reconnaissance d'actions</span></div>
-        <div><strong>Suivi / Re-ID</strong><span>ByteTrack · BoT-SORT · OSNet · logique ROI · filtrage d'identité · pipelines de comptage</span></div>
-        <div><strong>Déploiement / MLOps</strong><span>Linux · CUDA/cuDNN · ONNX · HPC/Slurm · Git · FastAPI · Next.js · MySQL · PyQt · ROS 2</span></div>
+      <div><strong>IA &amp; Vision</strong><span>Python · PyTorch · OpenCV · YOLO · RF-DETR · R3D-18 · réseaux temporels</span></div>
+      <div><strong>Analyse vidéo</strong><span>ByteTrack · BoT-SORT · OSNet · Re-ID · comptage ROI · reconnaissance d’actions</span></div>
+      <div><strong>Déploiement</strong><span>CUDA/cuDNN · ONNX · Linux · Slurm/HPC · Git · FastAPI · PyQt</span></div>
       </div>
     </section>
-
-    <section class="cv-section">
-      <div class="section-title-row"><h2>Expérience de recherche</h2><span>2026</span></div>
-      <article class="cv-entry featured">
-        <div class="entry-head">
-          <div><h3>Stagiaire de recherche Mitacs - Projet de fin d'études d'ingénieur</h3><p>Université de Moncton · Canada</p></div>
-          <time>mai - août 2026</time>
-        </div>
-        <h4>Plateforme de vision par ordinateur pour le suivi éthologique automatisé</h4>
-        <ul>
-          <li>Développement d'une plateforme d'IA visuelle pour le suivi éthologique automatisé de singes vervets, combinant détection corporelle, identification individuelle par collier, suivi, segmentation, contrôle qualité des annotations et analyse comportementale.</li>
-          <li>Construction et évaluation d'un jeu de données vidéo à grande échelle sur le cluster HPC Nibi, avec des traitements Slurm pour la détection, le suivi, la préparation des annotations et le benchmarking des modèles.</li>
-          <li>Évaluation de modèles récents de vision et multimodaux, notamment YOLO, RF-DETR, SAM3/SAM3.1, GroundingDINO, Qwen VLM, DeepLabCut SuperAnimal, macaque3Dpose et Cleanlab.</li>
-          <li>Conception d'une application web permettant de traiter des vidéos, visualiser les détections et trajectoires, réviser les annotations et exporter des résultats structurés pour l'analyse comportementale.</li>
-          <li>Conception et évaluation de Vervet-TCM, une architecture temporelle personnalisée de classification comportementale exploitant indices d'apparence, mouvement, convolutions temporelles et attention ; comparaison à R3D-18.</li>
-        </ul>
+    <section class="cv-section experience-section">
+      <h2>Expériences en vision par ordinateur</h2>
+      <article class="cv-entry">
+        <div class="entry-top"><strong class="entry-place">Université de Moncton, Canada · Mitacs Globalink</strong><time>Mai–août 2026</time></div>
+        <h3>Stagiaire de recherche en vision par ordinateur</h3>
+        <ul><li>Conception d’une chaîne multi-caméras pour la détection, l’identification par collier et le suivi de singes vervets, avec interface web de vérification et d’export des annotations.</li><li>Développement de Vervet-TCM, une architecture temporelle personnalisée exploitant apparence et mouvement ; évaluation comparative de modèles vidéo, dont R3D-18, sur le cluster HPC Nibi.</li></ul>
+      </article>
+      <article class="cv-entry">
+        <div class="entry-top"><strong class="entry-place">Solution Accommodation (SAC Marquage), Sfax</strong><time>Juin–août 2025</time></div>
+        <h3>Stages Computer Vision · Suivi et comptage temps réel</h3>
+        <ul><li>Analyse d’accès par deux caméras : YOLOv11x, OSNet et InsightFace pour l’identification et le comptage des entrées/sorties.</li><li>Adaptation de YOLOv11-seg à la détection de médicaments, suivi ByteTrack, filtrage par zones/identités et interface PyQt pour limiter les doubles comptages.</li></ul>
+      </article>
+      <article class="cv-entry">
+        <div class="entry-top"><strong class="entry-place">Solution Accommodation (SAC Marquage), Sfax</strong><time>Sept. 2024–avr. 2025</time></div>
+        <h3>Projet de vision · Contrôle qualité visuel</h3>
+        <ul><li>Entraînement de modèles YOLOv11n pour l’inspection de marquages laser ; contrôles OpenCV de lisibilité, positionnement et cohérence des couleurs.</li></ul>
+      </article>
+      <article class="cv-entry">
+        <div class="entry-top"><strong class="entry-place">Cockpit IoT, Sfax</strong><time>Juin–juil. 2024</time></div>
+        <h3>Stagiaire Computer Vision · Comptage d’objets</h3>
+        <ul><li>Adaptation de YOLOv8 et BoT-SORT au comptage de volailles ; tests d’inférence ONNX sur Raspberry Pi 4.</li></ul>
       </article>
     </section>
-
-    <section class="cv-section">
-      <h2>Stages et projets</h2>
-      <article class="cv-entry">
-        <div class="entry-head"><div><h3>Projet systèmes intelligents · ENET'Com</h3><p>Sfax, Tunisie</p></div><time>2025 - 2026</time></div>
-        <h4>TurtleBot3 guidé par LLM : compréhension visuelle, SLAM et navigation ROS 2</h4>
-        <ul><li>Intégration d'une téléopération en langage naturel avec Ollama/Llama 3.1 et d'une perception de scène YOLOv8n exposant des services ROS 2 structurés et en langage naturel.</li><li>Mise en œuvre de slam_toolbox, Nav2 et d'une navigation par points de passage, avec une logique de sécurité LiDAR capable de bloquer le mouvement en présence d'un obstacle proche.</li><li>Développement d'un tableau de bord PyQt intégrant commandes LLM, contrôle manuel, carte, position du robot et flux caméra temps réel dans Gazebo/RViz.</li></ul>
-        <p class="tech">ROS 2 Humble · TurtleBot3 · YOLOv8n · Ollama / Llama 3.1 · SLAM Toolbox · Nav2 · PyQt · Gazebo · RViz</p>
-      </article>
-      <article class="cv-entry">
-        <div class="entry-head"><div><h3>Stage d'été · Solution Accommodation (SAC Marquage)</h3><p>Sfax, Tunisie</p></div><time>juil. - août 2025</time></div>
-        <h4>Reconnaissance faciale bi-caméra pour le comptage entrée/sortie et l'analyse des accès</h4>
-        <ul><li>Déploiement de deux caméras alignées verticalement pour l'analyse du passage à une porte, avec détection YOLOv11x et ré-identification OSNet.</li><li>Amélioration d'image avec GFPGAN et embeddings InsightFace avec similarité cosinus pour la reconnaissance faciale temps réel à longue distance.</li><li>Exécution locale des modèles sur poste de travail / matériel edge afin d'assurer une faible latence et la confidentialité des données.</li></ul>
-        <p class="tech">Python · OpenCV · YOLOv11x · InsightFace · GFPGAN · OSNet</p>
-      </article>
-      <article class="cv-entry">
-        <div class="entry-head"><div><h3>Stage d'été · Solution Accommodation (SAC Marquage)</h3><p>Sfax, Tunisie</p></div><time>juin - juil. 2025</time></div>
-        <h4>Suivi et comptage temps réel pilotés par IA pour la distribution automatisée de médicaments</h4>
-        <ul><li>Collecte de vidéos sur site, annotation polygonale et fine-tuning de YOLOv11-seg pour identifier comprimés et flacons.</li><li>Développement d'un pipeline temps réel segmentation → ByteTrack → ROI / hystérésis / filtrage d'identité afin d'éviter les doubles comptages.</li><li>Développement d'une interface opérateur PyQt avec flux vidéo, états, remise à zéro, export, clips annotés et journaux Excel.</li></ul>
-        <p class="tech">Python · OpenCV · YOLOv11-seg · ByteTrack · Roboflow · PyQt · Excel · PyTorch</p>
-      </article>
-      <article class="cv-entry">
-        <div class="entry-head"><div><h3>Projet de fin d'année · Solution Accommodation (SAC Marquage)</h3><p>Sfax, Tunisie</p></div><time>sept. 2024 - avr. 2025</time></div>
-        <h4>Contrôle qualité temps réel du marquage laser par vision par ordinateur et IA</h4>
-        <ul><li>Conception d'un système de contrôle qualité temps réel utilisant une caméra industrielle et une chaîne complète allant de l'acquisition à la détection, validation et décision.</li><li>Entraînement de deux modèles YOLOv11n spécialisés et validation OpenCV de la position, de l'écart de couleur DeltaE2000, de l'opacité et de la lisibilité ponctuelle.</li><li>Intégration Modbus TCP/IP avec logique API/PLC pour l'arrêt de ligne, l'acquittement et le redémarrage sécurisé en cas de pièce défectueuse.</li><li>Déploiement GPU avec CUDA/cuDNN et optimisation de la latence pour respecter le temps de cycle de la ligne.</li></ul>
-        <p class="tech">Python · OpenCV · EasyOCR · YOLOv11n · DeltaE2000 · ESRGAN · Modbus TCP · PLC · CUDA/cuDNN</p>
-      </article>
-      <article class="cv-entry">
-        <div class="entry-head"><div><h3>Stage d'été · Cockpit IoT</h3><p>Sfax, Tunisie</p></div><time>juin - juil. 2024</time></div>
-        <h4>Comptage de volailles assisté par IA sur ligne de production</h4>
-        <ul><li>Création et annotation d'un jeu d'images avec Roboflow et fine-tuning de YOLOv8 pour la détection de volailles.</li><li>Intégration de BoT-SORT et d'une logique de comptage entrée/sortie OpenCV sur vidéo annotée en temps réel.</li><li>Export ONNX, tests sur Raspberry Pi 4 avec Camera v2, optimisation latence/FPS et journalisation des événements dans MariaDB.</li></ul>
-        <p class="tech">Python · OpenCV · YOLOv8 · BoT-SORT · Roboflow · ONNX · Raspberry Pi 4 · MariaDB</p>
-      </article>
-      <article class="cv-entry">
-        <div class="entry-head"><div><h3>Stage de fin d'études · Tunisian Development Systems (TDS)</h3><p>Sfax, Tunisie</p></div><time>févr. - juin 2023</time></div>
-        <h4>Démonstrateur Industrie 4.0 pour le contrôle énergétique d'un moteur</h4>
-        <ul><li>Prototypage d'un système Industrie 4.0 combinant contrôle embarqué et IoT pour la supervision moteur/variateur sous TIA Portal.</li><li>Développement d'une passerelle PLC vers Raspberry Pi 4 utilisant OPC UA, MQTT et HTTP, avec tableau de bord Node-RED pour le contrôle et la visualisation temps réel.</li></ul>
-        <p class="tech">TIA Portal · PLC · Raspberry Pi 4 · OPC UA · MQTT · HTTP · Node-RED</p>
-      </article>
-    </section>
-
-    <section class="cv-section two-col">
-      <div>
-        <h2>Formation</h2><article class="small-entry"><time>Hiver 2027 (admission)</time><h3>Maîtrise en sciences — informatique (avec mémoire)</h3><p>Université de Moncton, Canada</p><small>Admis · Début prévu en janvier 2027</small></article>
-        <article class="small-entry"><time>sept. 2023 - oct. 2026</time><h3>Diplôme d'ingénieur en informatique industrielle</h3><p>École Nationale d'Électronique et des Télécommunications de Sfax (ENET'Com)</p><small>Diplômé en octobre 2026 · Mention Bien</small></article>
-        <article class="small-entry"><time>sept. 2020 - juin 2023</time><h3>Licence en automatisme et informatique industrielle</h3><p>Institut Supérieur de Gestion Industrielle de Sfax (ISGIS)</p><small>Diplômé avec mention très bien, parmi les meilleurs résultats académiques</small></article>
-        <article class="small-entry"><time>sept. 2016 - juil. 2020</time><h3>Baccalauréat en sciences techniques</h3><p>Lycée Hay Lahbib</p><small>Diplômé avec mention</small></article>
+    <section class="cv-section cv-bottom">
+      <div class="education-col">
+        <h2>Formation</h2>
+        <article class="degree">
+          <h3>Diplôme d’ingénieur en informatique industrielle</h3>
+          <p>ENET’Com · École Nationale d’Électronique et des Télécommunications de Sfax</p>
+          <small>Oct. 2026 · Mention Très bien</small>
+        </article>
+        <article class="degree">
+          <h3>Licence en automatisme et informatique industrielle</h3>
+          <p>ISGIS · Institut Supérieur de Gestion Industrielle de Sfax</p>
+          <small>2023 · Mention Très bien</small>
+        </article>
       </div>
-      <div>
-        <h2>Distinctions et activités</h2>
-        <ul class="achievement-list">
-          <li>2e place, DIGILOG - Process Optimization Challenge, organisé par l'ENET'Com, l'Université de Leipzig et KNUST avec le soutien du DAAD/BMZ.</li>
-          <li>Projet de fin d'année distingué à la Foire de l'Université de Sfax.</li>
-          <li>Certificat d'anglais niveau intermédiaire supérieur (B2) - English Cultural Center.</li>
-          <li>Certificat Arduino & Raspberry Pi Performance - Ultimate Learning Center.</li>
-          <li>Responsable Business & Development - projet We Are Geeks, Tunivisions Foundation.</li>
-          <li>Assistant sponsoring - Club Tunivisions ISGIS.</li>
-        </ul>
+      <div class="highlights-col">
+        <h2>Distinctions</h2>
+        <p class="achievement">2e place · DIGILOG Process Optimization Challenge (SIVAR / SafeVision)</p>
         <h2 class="languages-title">Langues</h2>
-        <p class="languages">Arabe <b>langue maternelle</b> · Français <b>B2</b> · Anglais <b>B2</b></p>
+        <p>Arabe (langue maternelle) · Français (B2) · Anglais (B2)</p>
       </div>
     </section>
   </main>
