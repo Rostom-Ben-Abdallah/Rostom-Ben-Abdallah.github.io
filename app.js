@@ -99,15 +99,15 @@
               <small>SIVAR / SafeVision</small>
             </div>
             <div>
-              <strong>M.Sc.</strong>
-              <span>Admitted · Winter 2027</span>
-              <small>Université de Moncton</small>
+              <strong>ENGINEER</strong>
+              <span>Graduated · 2026</span>
+              <small>ENET’Com · Computer Vision</small>
             </div>
           </div>
 
           <div class="about-links">
-            <a class="text-link" href="cv.html">Academic CV (EN) <span>↗</span></a>
-            <a class="text-link" href="cv-fr.html">CV académique (FR) <span>↗</span></a>
+            <a class="text-link" href="cv.html">Professional CV (EN) <span>↗</span></a>
+            <a class="text-link" href="cv-fr.html">CV professionnel (FR) <span>↗</span></a>
             <a class="text-link" href="https://github.com/Rostom-Ben-Abdallah" target="_blank" rel="noreferrer">Public code & case studies <span>↗</span></a>
           </div>
         </div>
