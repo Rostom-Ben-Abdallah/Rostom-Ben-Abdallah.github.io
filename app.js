@@ -81,16 +81,16 @@
           <span class="section-index">00 / ABOUT</span>
           <h2 id="aboutTitle">I build vision systems that survive <span class="muted">outside the notebook.</span></h2>
           <p class="about-lede">
-            I am an Industrial Computer Engineering student at ENET’Com and a Mitacs research intern at Université de Moncton. My work sits at the intersection of <strong>computer vision, video understanding and intelligent systems</strong>, with hands-on experience moving from data and models to tracking, temporal reasoning, interfaces and deployment.
+            I graduated in Industrial Computer Engineering from ENET’Com in October 2026 and completed a Mitacs Globalink research internship at Université de Moncton. My work sits at the intersection of <strong>computer vision, video understanding and intelligent systems</strong>, with hands-on experience moving from data and models to tracking, temporal reasoning, interfaces and deployment.
           </p>
           <p>
-            My current research focuses on automated animal behaviour analysis from multi-camera video. Across research and industry projects, I have worked on detection, segmentation, multi-object tracking, Re-ID, action recognition, industrial inspection, edge deployment and robotics perception.
+            My Mitacs research focused on vervet-monkey identification and spatiotemporal behaviour analysis, including my custom Vervet-TCM architecture. Across research and industry projects, I have worked on detection, segmentation, multi-object tracking, Re-ID, action recognition, industrial inspection, edge deployment and robotics perception.
           </p>
 
           <div class="about-proof-grid" aria-label="Profile highlights">
             <div>
               <strong>MITACS</strong>
-              <span>Research internship</span>
+              <span>Globalink research alumnus</span>
               <small>Université de Moncton</small>
             </div>
             <div>
@@ -100,8 +100,8 @@
             </div>
             <div>
               <strong>M.Sc.</strong>
-              <span>Research target</span>
-              <small>Computer Vision / AI</small>
+              <span>Admitted · Winter 2027</span>
+              <small>Université de Moncton</small>
             </div>
           </div>
 
