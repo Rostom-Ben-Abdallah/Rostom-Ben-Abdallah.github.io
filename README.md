@@ -15,16 +15,16 @@
 
 Personal academic portfolio for **computer vision, visual AI, video understanding and robotics perception**.
 
-The site is intentionally research-first. It highlights current Mitacs work, selected applied computer-vision systems, playable project demonstrations, research interests, engineering experience, recognition and contact information.
+The site is intentionally computer-vision-first. It highlights completed 2026 Mitacs Globalink research and the original Vervet-TCM architecture, selected applied computer-vision systems, playable project demonstrations, research interests, engineering experience, recognition and contact information.
 
 ## What faculty can explore
 
-- **Current research** — multi-camera animal behaviour understanding
+- **Featured research** — Vervet-TCM and multi-camera animal behaviour recognition
 - **Playable project demos** — industrial vision and SafeVision
 - **Recognition** — 2nd Place, DIGILOG Process Optimization Challenge
 - **Selected systems** — multi-camera tracking/Re-ID and robot vision + LLM
 - **Experience & technical toolkit**
-- **Graduate research interests**
+- **Education** — engineering graduate (October 2026); admitted to M.Sc. Computer Science, Winter 2027
 - **Academic CV** — [`cv.html`](https://rostom-ben-abdallah.github.io/cv.html)
 
 ## Design principles
@@ -41,4 +41,4 @@ The site is intentionally research-first. It highlights current Mitacs work, sel
 
 Active research data, private datasets, trained models, credentials, infrastructure details and unpublished results are intentionally excluded. Public portfolio material focuses on transferable methods, independently shareable code and approved project demonstrations.
 
-_Last portfolio refresh: August 2026._
+_Last portfolio refresh: October 2026._
